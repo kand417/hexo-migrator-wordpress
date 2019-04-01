@@ -96,7 +96,7 @@ hexo.extend.migrator.register('wordpress', function(args, callback){
           date: date,
           content: content,
           layout: status === 'draft' ? 'draft' : 'post',
-          alias: '/'+slug+'/',
+          alias: '/'+decodeURI(slug)+'/',
         };
 
         if (type === 'page') data.layout = 'page';
